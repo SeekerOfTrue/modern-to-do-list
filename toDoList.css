@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Italianno');
+
+:root {
+    --main-app-color: #1c8fee;
+}
+
+/* General */
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Tahoma;
+    background: url(img/background.png);
+    letter-spacing: 1px;
+}
+
+#wrapper{
+    width: 960px;
+    margin: 20px auto;
+    border-radius: 6px;
+    box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
+    padding: 0 0 20px;
+    overflow: hidden;
+    border: 2px solid var(--main-app-color);
+    background: #ffffff;
+}
+
+/* Header an title the App */
+
+#page-banner{
+    background: var(--main-app-color);
+    padding: 10px 0;
+    color: aliceblue;
+    position: relative;
+}
+
+#page-banner i{
+    position: absolute;
+    font-size: 8em;
+    top: 100px;
+}
+
+#page-banner .fa-clipboard-list{
+    left: 50px;
+}
+
+#page-banner .fa-thumbtack{
+    right: 50px;  
+}
+
+#page-banner h1, #page-banner p{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#page-banner h1 {
+    font-weight: normal;
+    font-size: 4.5em;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+#page-banner p {
+    font-family: 'Italianno', cursive;
+    font-size: 2em;
+}
+
+/* Search input */
+#page-banner input[type="text"]{
+    width: 300px;
+    margin: 20px auto;
+    display: block;
+    padding: 8px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #444;
+    transition: 0.5s;
+}
+
+#page-banner input[type="text"]:focus {
+    box-shadow: 0px 0px 57px 4px rgba(221,245,0,1);
+}
+
+ 
+/* Checkbox */
+.checkbox-container {
+    display: block;
+    width: 200px;
+    position: relative;
+    padding-left: 30px;
+    margin: 10px auto;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    text-align: center;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: rgb(207, 207, 207);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: white;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none; 
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--main-app-color);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Box with all to dos */
+
+#container-list{
+    margin: 30px;
+}
+
+#container-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#container-list li{
+    padding: 18px;
+    border-left: 8px solid rgb(158, 158, 158);
+    margin: 20px 10px;
+    position: relative;
+}
+
+#container-list li:hover{
+    border-color: var(--main-app-color);;
+}
+
+/* Delete button */
+.deleteBtn{
+    position: absolute;
+    top: 50%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    background: rgb(197, 36, 36);
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+.deleteBtn:hover{
+    background: #6d0909;
+}
+
+/* Done button */
+
+.doneBtn {
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    background: #02cc6e;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    margin-right: 100px;
+}
+
+.doneBtn:hover{
+    background: #00883d;
+}
+
+/* Form Add new to do */
+
+#form-to-do{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, minmax(50px, auto));
+    justify-content: center;
+    margin: 30px;
+}
+
+#form-to-do input{
+    display: block;
+    border: 1.5px solid grey;
+    font-size: 16px;
+    border-radius: 6px 0 0 6px;
+    width: 300px;
+    padding: 0 8px;
+    outline: none;
+}
+
+#form-to-do input:focus {
+    border: 2px solid var(--main-app-color);
+}
+
+.name-to-do {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#form-to-do select {
+    width: 105px;
+    height: 50px;
+    color: #585656;
+    font-weight: bold;
+    border: 1.5px solid grey;
+    outline: none;
+}
+
+#form-to-do select:focus {
+    border: 2px solid var(--main-app-color);
+}
+
+#form-to-do select option {
+    border: 1px solid var(--main-app-color);
+}
+
+
+#form-to-do button{
+    border: 2px solid var(--main-app-color);
+    background: var(--main-app-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    width: 100px;
+    color: white;
+    transition: 0.3s;
+    outline: none;
+}
+
+#form-to-do button:hover {
+    background: white;
+    color: var(--main-app-color);
+}
+
+
+/* Tabs */
+#tabbed-content {
+    margin: 40px;
+}
+
+#tabbed-content ul {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, minmax(50px, auto));
+    justify-content: center;
+    list-style-type: none;
+}
+
+
+#tabbed-content li{
+    display: inline-block;
+    padding: 10px 14px;
+    background: #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+#tabbed-content .panel{
+    display: none;
+    border: 1.5px solid rgb(165, 165, 165);
+    padding: 0 10px;
+    border-radius: 4px;
+}
+
+
+#tabbed-content .panel.active{
+    display: block;
+}
+
+#tabbed-content ul li:nth-child(1)  {
+    background: #cffdc5;
+}
+
+#tabbed-content ul li:nth-child(2) {
+    background: #f3f3a1;
+}
+
+#tabbed-content ul li:nth-child(3) {
+    background: #fdd4d3;
+}
+
+#tabbed-content ul li:nth-child(1):hover {
+    border: 2px solid #9eff89;
+}
+
+#tabbed-content ul li:nth-child(2):hover {
+    border: 2px solid #fddb6a;
+}
+
+#tabbed-content ul li:nth-child(3):hover {
+    border: 2px solid #ffa3a2;
+}

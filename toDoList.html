@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="toDoList.css" rel="stylesheet" />
+    <script src="toDoList.js" defer></script>
+    <title>My to do list</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	</head>
+
+
+  <body>
+
+  	<div id="wrapper">
+
+	    <header>
+	    	<div id="page-banner">
+           <i class="fas fa-clipboard-list"></i>
+          <i class="fas fa-thumbtack"></i>
+	    		<h1 class="title">My to do List</h1>
+          <p>Nicholas Zhmakin</p>
+          <form id="search-books">
+            <input type="text" placeholder="Search..." />
+          </form>
+          <div id="hide-to-do">
+            <label class="checkbox-container">Display uncompleted high-level tasks
+                <input type="checkbox" id="hide">
+                <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+			</header>
+			
+	    <div id="container-list">
+	    	<ul id="to-do-list">
+	    		
+	    	</ul>
+			</div>
+
+	    <form id="form-to-do">
+        <input type="text" placeholder="Add new to do..." />
+            <select>
+              <option value="lightgrey">Select level:</option>
+              <option value="rgb(207, 253, 197)">Low</option>
+              <option value="rgb(243, 243, 161)">Medium</option>
+              <option value="rgb(252, 211, 211);">High</option>
+            </select>
+        <button>Add</button>
+      </form>
+			
+      <div id="tabbed-content">
+        <ul class="tabs">
+          <li data-target="#low" class="active">Low</li>
+          <li data-target="#medium">Medium</li>
+          <li data-target="#high">High</li>
+        </ul>
+        <div class="panel active" id="low">
+          <p><b>Low</b></p>
+          <p>The task has a low level of importance and does not require urgent execution</p>
+        </div>
+        <div class="panel" id="medium">
+          <p><b>Medium</b></p>
+          <p>The task has an average level of importance and requires execution in the near future</p>
+        </div>
+        <div class="panel" id="high">
+          <p><b>High</b></p>
+          <p>The task has a high level of importance and requires immediate execution</p>
+        </div>
+			</div>
+			
+
+    </div>
+  </body>
+</html>
